@@ -51,7 +51,7 @@ export default component$(() => {
 function createStyle() {
   return `
     header {
-      padding-top: 100px;
+      padding-top: ${fluid(100, 140, 320, 1440)};
       padding-bottom: 100px;
     }
 
@@ -90,6 +90,7 @@ function createStyle() {
       --img-width: ${fluid(200, 300, 320, 1440)};
       display: flex;
       overflow: hidden;
+      position: relative;
     }
 
     .hero__visual__marquee:before {
@@ -97,7 +98,7 @@ function createStyle() {
       position: absolute;
       z-index: 1;
       bottom: 0;
-      left: 0;
+      left: -1px;
       pointer-events: none;
       background-image: linear-gradient(to left, rgba(255,255,255,0), white 90%);
       width: calc(var(--img-width) * 0.2);
@@ -109,7 +110,7 @@ function createStyle() {
       position: absolute;
       z-index: 1;
       bottom: 0;
-      right: 0;
+      right: -2px;
       pointer-events: none;
       background-image: linear-gradient(to right, rgba(255,255,255,0), white 90%);
       width: calc(var(--img-width) * 0.2);
