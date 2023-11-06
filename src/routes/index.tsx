@@ -1,15 +1,18 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
+
+import HeroSection from '~/components/hero-section/double-img-marquee';
+import LogoMarquee from '~/components/logo-marquee/logo-marquee';
 
 export default component$(() => {
+  useStylesScoped$(createStyle())
+
   return (
     <>
-      <h1>Hi 👋</h1>
-      <p>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
-      </p>
+      <HeroSection/>
+      <main>
+        <LogoMarquee />
+      </main>
     </>
   );
 });
@@ -22,4 +25,10 @@ export const head: DocumentHead = {
       content: "Qwik site description",
     },
   ],
-};
+}
+
+function createStyle() {
+  return `
+    
+  `
+}
