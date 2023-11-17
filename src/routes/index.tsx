@@ -17,7 +17,7 @@ export default component$(() => {
 
   return (
     <>
-      <Navbar1 navitems={['About', 'Services', 'Portfolio', 'Testimonials', 'Contact']}/>
+      <Navbar1/>
       <HeroSection/>
       <main>
         <LogoMarquee />
