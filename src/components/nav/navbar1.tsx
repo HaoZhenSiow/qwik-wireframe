@@ -1,13 +1,8 @@
 import { component$, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik'
-import useViewportSize from '~/hooks/useViewportSize'
 import styled from '~/lib/styled'
 
 export default component$(({ navitems }: { navitems: string[] }) => {
   useStylesScoped$(createStyle())
-
-  const viewport = useViewportSize(),
-        isBigScreen = viewport.width > 950
-
   useVisibleTask$(({ cleanup }) => {
     if (typeof document !== 'undefined') {
       document.addEventListener('scroll', documentScroll)
@@ -20,17 +15,17 @@ export default component$(({ navitems }: { navitems: string[] }) => {
     <div class="navbar">
       <div class="container">
         <p class="logo">LOGO</p>
-        {isBigScreen && <div class="navbar__nav_button">
+        <div class="navbar__nav_button">
           <ul>
             {navitems.map((item) => (
               <li key={item}><a href={`/${item}`}>{item}</a></li>
             ))}
           </ul>
           <button type='button'>Free Quotation</button>
-        </div>}
-        {!isBigScreen && <div class="navbar__hamburger">
+        </div>
+        <div class="navbar__hamburger">
           <div/><div/><div/>
-        </div>}
+        </div>
       </div>
       
     </div>
@@ -98,6 +93,7 @@ function createStyle() {
     }
 
     .navbar__hamburger {
+      display: none;
       content: '';
       width: 3em;
       height: 2em;
@@ -118,6 +114,11 @@ function createStyle() {
       }
 
       &:hover { cursor: pointer; }
+    }
+
+    @media (max-width: 950px) {
+      .navbar__nav_button { display: none; }
+      .navbar__hamburger { display: block; }
     }
   `)
 }

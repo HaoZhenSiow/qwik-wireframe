@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik'
 import styled from '~/lib/styled'
 import Testimonial from './Testimonial'
-import Card from '../portfolio/Card'
+// import Card from '../portfolio/Card'
 
 export default component$(() => {
   useStylesScoped$(createStyle())

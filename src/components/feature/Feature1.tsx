@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik'
-import fluid from '~/lib/fluid'
+// import fluid from '~/lib/fluid'
 
 export default component$(() => {
   useStylesScoped$(createStyle())

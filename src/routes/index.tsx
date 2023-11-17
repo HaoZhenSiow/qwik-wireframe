@@ -1,4 +1,4 @@
-import { component$, useStylesScoped$, useStyles$ } from '@builder.io/qwik'
+import { component$, useStyles$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import styled from '~/lib/styled'
 import fluid from '~/lib/fluid'
@@ -10,7 +10,7 @@ import Feature1 from '~/components/feature/Feature1'
 import Feature2 from '~/components/feature/Feature2'
 import Portfolio from '~/components/portfolio/Portfolio'
 import TestimonialSection from '~/components/testimonial/TestimonialSection'
-import FAQ from '~/components/faq/FAQ'
+// import FAQ from '~/components/faq/FAQ'
 
 export default component$(() => {
   useStyles$(createStyle())
@@ -25,7 +25,7 @@ export default component$(() => {
         <Feature2/>
         <Portfolio/>
         <TestimonialSection/>
-        <FAQ/>
+        {/* <FAQ/> */}
       </main>
       {/* <footer></footer> */}
     </>
