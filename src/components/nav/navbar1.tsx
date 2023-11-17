@@ -1,20 +1,14 @@
 import { component$, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik'
+import useViewportSize from '~/hooks/useViewportSize'
 import styled from '~/lib/styled'
 
 export default component$(({ navitems }: { navitems: string[] }) => {
   useStylesScoped$(createStyle())
+
+  const viewport = useViewportSize(),
+        isBigScreen = viewport.width > 950
+
   useVisibleTask$(({ cleanup }) => {
-    
-    const documentScroll =  () => {
-      const pagePos = document.documentElement.scrollTop
-
-      if (pagePos > 0 ) {
-        document.querySelector('.navbar')?.classList.add('navbar--scrolled')
-      } else {
-        document.querySelector('.navbar')?.classList.remove('navbar--scrolled')
-      }
-    }
-
     if (typeof document !== 'undefined') {
       document.addEventListener('scroll', documentScroll)
     }
@@ -26,17 +20,17 @@ export default component$(({ navitems }: { navitems: string[] }) => {
     <div class="navbar">
       <div class="container">
         <p class="logo">LOGO</p>
-        <div class="navbar__nav_button">
+        {isBigScreen && <div class="navbar__nav_button">
           <ul>
             {navitems.map((item) => (
               <li key={item}><a href={`/${item}`}>{item}</a></li>
             ))}
           </ul>
           <button type='button'>Free Quotation</button>
-        </div>
-        <div class="navbar__hamburger">
+        </div>}
+        {!isBigScreen && <div class="navbar__hamburger">
           <div/><div/><div/>
-        </div>
+        </div>}
       </div>
       
     </div>
@@ -55,12 +49,12 @@ function createStyle() {
       transition: padding-block .5s ease-in-out;
       z-index: 100;
 
-      .container {
+      & .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .logo {
+        & .logo {
           font-size: 3em;
           font-weight: bold;
           line-height: 1;
@@ -72,7 +66,7 @@ function createStyle() {
         background-color: white;
         padding-block: .4em;
 
-        .container .logo {
+        & .container .logo {
           font-size: 2.5em;
         }
       }
@@ -104,7 +98,6 @@ function createStyle() {
     }
 
     .navbar__hamburger {
-      display: none;
       content: '';
       width: 3em;
       height: 2em;
@@ -126,10 +119,15 @@ function createStyle() {
 
       &:hover { cursor: pointer; }
     }
-
-    @media (max-width: 950px) {
-      .navbar__nav_button { display: none; }
-      .navbar__hamburger { display: block; }
-    }
   `)
+}
+
+function documentScroll() {
+  const pagePos = document.documentElement.scrollTop
+
+  if (pagePos > 0 ) {
+    document.querySelector('.navbar')?.classList.add('navbar--scrolled')
+  } else {
+    document.querySelector('.navbar')?.classList.remove('navbar--scrolled')
+  }
 }
