@@ -3,6 +3,7 @@
 /lib
 /lib-types
 /server
+/preview
 
 # Development
 node_modules
