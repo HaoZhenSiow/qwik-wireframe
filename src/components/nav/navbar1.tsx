@@ -1,26 +1,22 @@
-import { component$, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik'
-import useViewportSize from '~/hooks/useViewportSize'
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
 import styled from '~/lib/styled'
+import useViewportSize from '~/hooks/useViewportSize'
+import useWindowScroll from '~/hooks/useWindowScroll'
 
 const navitems = ['About', 'Services', 'Portfolio', 'Testimonials', 'Contact']
 
 export default component$(() => {
+  useStylesScoped$(createStyle())
+  
+  const scroll = useWindowScroll()
   const viewport = useViewportSize(),
         isSmallScreen = viewport.width <= 950
 
-  useStylesScoped$(createStyle())
-
-  useVisibleTask$(({ cleanup }) => {
-    if (typeof document !== 'undefined') {
-      document.addEventListener('scroll', toggleNavbarScrolled)
-    }
-    cleanup(() => {
-      document.removeEventListener('scroll', toggleNavbarScrolled)
-    })
-  })
-
   return (
-    <div class="navbar">
+    <div class={[
+      'navbar',
+      scroll.value > 0 && 'navbar--scrolled',
+    ]}>
       <div class="container navbar__container">
         <p class="navbar__logo">LOGO</p>
         {isSmallScreen ? <Hamburger /> : <NavButtons />}
@@ -147,13 +143,3 @@ const Hamburger = component$(() => {
     </div>
   )
 })
-
-
-
-function toggleNavbarScrolled() {
-  const pagePos = document.documentElement.scrollTop
-  pagePos > 0 ?
-  document.querySelector('.navbar')?.classList.add('navbar--scrolled') :
-  document.querySelector('.navbar')?.classList.remove('navbar--scrolled')
-}
-
