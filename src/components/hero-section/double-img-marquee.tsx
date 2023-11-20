@@ -40,26 +40,9 @@ const Marquee = component$(({ reverse }: {
       display: flex;
       overflow: hidden;
       position: relative;
-    }
-
-    .marquee:before, .marquee:after {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      width: calc(var(--img-width) * 0.2);
-      height: 100%;
-      background-image: linear-gradient(to var(--dir), rgba(255,255,255,0), white 90%);
-    }
-
-    .marquee:before {
-      --dir: left;
-      left: -5px;
-    }
-
-    .marquee:after {
-      --dir: right;
-      right: -2px;
+      --mask-gradient: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 52%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: var(--mask-gradient);
+      mask-image: var(--mask-gradient);
     }
 
     .marquee_row {
