@@ -20,6 +20,10 @@ const CACHE_FIRST_RESOURCE = [
   '/ID/bizsafe.webp',
   '/ID/top2023.webp',
   '/ID/elitEnterprice.webp',
+  '/fonts/ubuntu-v20-latin/ubuntu-v20-latin-regular.woff2',
+  '/fonts/ubuntu-v20-latin/ubuntu-v20-latin-700.woff2',
+  '/fonts/open-sans-v36-latin/open-sans-v36-latin-regular.woff2',
+  '/fonts/open-sans-v36-latin/open-sans-v36-latin-700.woff2'
 ]
 
 const CROSS_ORIGIN_RESOURCES: string[] = []
