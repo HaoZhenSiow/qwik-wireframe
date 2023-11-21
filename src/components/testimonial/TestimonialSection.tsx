@@ -7,9 +7,9 @@ export default component$(() => {
   useStylesScoped$(createStyle())
 
   return (
-    <div class="container">
+    <div class="container testimonials">
       <h2>Don't Take Our Word For It.<br/> Hear What Our Customers Say.</h2>
-      <div class="testimonials">
+      <div class="testimonials__container">
         <Testimonial/>
         <Testimonial/>
         <Testimonial/>
@@ -17,24 +17,24 @@ export default component$(() => {
         <Testimonial/>
         <Testimonial/>
       </div>
-      <button type="button" class="view-more">All Projects</button>
+      <button type="button" class="testimonials__cta">All Projects</button>
     </div>
   )
 })
 
 function createStyle() {
   return styled(`
-    .container {
+    .testimonials {
       padding-block: 100px;
       text-align: center;
     }
 
-    .testimonials {
+    .testimonials__container {
       display: grid;
       grid-gap: 1.5em;
     }
 
-    .view-more {
+    .view-testimonials__cta {
       font-weight: bold;
       font-size: 1em;
       padding: 1em 2em;
@@ -44,11 +44,11 @@ function createStyle() {
     }
 
     @media (900px <= width < 1200px) {
-      .testimonials { grid-template-columns: repeat(2, 1fr); }
+      .testimonials__container { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (width >= 1200px) {
-      .testimonials { grid-template-columns: repeat(3, 1fr); }
+      .testimonials__container { grid-template-columns: repeat(3, 1fr); }
     }
   `)
 }
