@@ -1,4 +1,4 @@
-import { type Signal, component$, useSignal, useStyles$, useVisibleTask$ } from "@builder.io/qwik"
+import { type Signal, component$, useSignal, useStylesScoped$, useVisibleTask$ } from "@builder.io/qwik"
 import styled from "~/lib/styled"
 
 export default component$(({ idx, expansionSig, item }: {
@@ -12,7 +12,7 @@ export default component$(({ idx, expansionSig, item }: {
 
   const contentSig = useSignal<HTMLDivElement>()
 
-  useStyles$(writeAccordionStyle())
+  useStylesScoped$(writeAccordionStyle())
   useVisibleTask$(function detectContentHeight() {
     if (!contentSig.value) return
 

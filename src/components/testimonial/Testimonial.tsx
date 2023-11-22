@@ -1,8 +1,8 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
 import styled from '~/lib/styled'
 
 export default component$(() => {
-  useStyles$(createStyle())
+  useStylesScoped$(createStyle())
 
   return (
     <div class="testimonial_card">
@@ -41,11 +41,32 @@ function createStyle() {
     .testinomial_detail h3 {
       letter-spacing: -.07em;
       margin-bottom: .2em;
+      margin-bottom: .5em;
     }
 
     .testinomial_detail p {
       letter-spacing: -.07em;
       line-height: 1.4;
+    }
+
+    .testimonial_card:nth-child(4),
+    .testimonial_card:nth-child(5),
+    .testimonial_card:nth-child(6) {
+      display: none;
+    }
+
+    @media (650px <= width < 1200px) {
+      .testimonial_card:nth-child(4) {
+        display: block;
+      }
+    }
+
+    @media (width >= 1200px) {
+      .testimonial_card:nth-child(4),
+      .testimonial_card:nth-child(5),
+      .testimonial_card:nth-child(6) {
+        display: block;
+      }
     }
   `)
 }

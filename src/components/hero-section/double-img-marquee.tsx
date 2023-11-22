@@ -94,7 +94,6 @@ function createStyle() {
       --cta-color: white;
       --cta-bg: black;
       padding-top: ${fluid(100, 140, 320, 1440)};
-      padding-bottom: 100px;
     }
 
     .hero__visual {

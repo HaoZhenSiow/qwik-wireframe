@@ -5,7 +5,7 @@ export default component$(() => {
 
   const logos = ['elitEnterprice', 'prestige100', 'sme', 'top', 'top2023', 'topService', 'bizsafe']
   return (
-    <div class="logo-marquee section">
+    <section class="logo-marquee" aria-label="awards and accreditations marquee">
       <div class="logo-marquee__list">
         {logos.map(logo => (
           <div key={`${logo}-1`} class="logo-marquee__logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}} />
@@ -16,7 +16,7 @@ export default component$(() => {
           <div key={`${logo}-2`} class="logo-marquee__logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}} />
         ))}
       </div>
-    </div>
+    </section>
   )
 })
 

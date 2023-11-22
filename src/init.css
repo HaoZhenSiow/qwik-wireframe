@@ -1,13 +1,21 @@
 
 /* https://utopia.fyi/type/calculator/?c=320,16,1.2,1440,18,1.333,5,2,1920&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 :root {
-  --fluid-h1: clamp(2.0738rem, 1.6514rem + 2.1116vw, 3.5519rem);
+  /* --fluid-h1: clamp(2.0738rem, 1.6514rem + 2.1116vw, 3.5519rem);
   --fluid-h2: clamp(1.7281rem, 1.4606rem + 1.3375vw, 2.6644rem);
   --fluid-h3: clamp(1.44rem, 1.2804rem + 0.7982vw, 1.9988rem);
   --fluid-h4: clamp(1.2rem, 1.1145rem + 0.4277vw, 1.4994rem);
   --fluid-h5: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
   --fluid-h6: clamp(0.8331rem, 0.8301rem + 0.0152vw, 0.8438rem);
-  --fluid-sm: clamp(0.6331rem, 0.7119rem + -0.0875vw, 0.6944rem);
+  --fluid-sm: clamp(0.6331rem, 0.7119rem + -0.0875vw, 0.6944rem); */
+  --fluid-lg: clamp(1.38rem, calc(0.98rem + 2.02vw), 2.80rem);
+  --fluid-h1: clamp(1.30rem, calc(1.00rem + 1.48vw), 2.33rem);
+  --fluid-h2: clamp(1.22rem, calc(1.01rem + 1.04vw), 1.94rem);
+  --fluid-h3: clamp(1.14rem, calc(1.00rem + 0.69vw), 1.62rem);
+  --fluid-h4: clamp(1.07rem, calc(0.99rem + 0.40vw), 1.35rem);
+  --fluid-h5: clamp(1.00rem, calc(0.96rem + 0.18vw), 1.13rem);
+  --fluid-h6: clamp(0.94rem, calc(0.94rem + 0.00vw), 0.94rem);
+  --fluid-sm: clamp(0.78rem, calc(0.91rem + -0.14vw), 0.88rem);
   --fluid-line-height: calc(1.8em - .4 * ((100vw - 29.08324552em) / (77.58342115)));
 }
 

@@ -4,9 +4,9 @@ export default component$(() => {
   useStylesScoped$(createStyle())
 
   return (
-    <div class="container">
+    <section class="container">
       <div class="copy">
-        <h2>Crack the Code to Transparent Renovation Pricing</h2>
+        <h2>Crack the Code to<br /> Transparent Renovation Pricing</h2>
         <p>Hidden costs and unexpected expenses can turn your dream home project into a financial nightmare. But worry not! We've introduced E Build Assist, a revolutionary quotation system that provides you:</p>
         <ul>
           <li>Accurate Quotation in Just 1 Hour</li>
@@ -18,22 +18,25 @@ export default component$(() => {
         </ul>
       </div>
       <div class="visual"></div>
-    </div>
+    </section>
   )
 })
 
 function createStyle() {
   return `
     .container {
-      padding-block: 100px;
       display: flex;
       flex-direction: column-reverse;
-      // text-align: center;
       align-items: center;
     }
 
     h2 {
+      margin-top: 1.5em;
       margin-bottom: 1em;
+    }
+
+    br {
+      display: none;
     }
 
     p {
@@ -51,14 +54,20 @@ function createStyle() {
 
     @media (1000px <= width) {
       .container {
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        text-align: start;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      br {
+        display: inline;
       }
 
       .visual {
-        margin-right: 3em;
+        margin-left: 3em;
       }
     }
   `

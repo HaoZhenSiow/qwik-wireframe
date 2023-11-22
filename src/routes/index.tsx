@@ -9,6 +9,7 @@ import Feature2 from '~/components/feature/Feature2'
 import Portfolio from '~/components/portfolio/Portfolio'
 import TestimonialSection from '~/components/testimonial/TestimonialSection'
 import FAQ from '~/components/faq/FAQ'
+import Cta1 from '~/components/cta/cta1'
 
 export default component$(() => {
   return (
@@ -17,11 +18,12 @@ export default component$(() => {
       <HeroSection/>
       <main>
         <LogoMarquee />
-        <Feature1/>
-        <Feature2/>
-        <Portfolio/>
-        <TestimonialSection/>
-        <FAQ/>
+        <Feature2 />
+        <Feature1 />
+        <Portfolio />
+        <TestimonialSection />
+        <FAQ />
+        <Cta1 />
       </main>
       {/* <footer></footer> */}
     </>

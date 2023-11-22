@@ -1,8 +1,8 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
 import styled from '~/lib/styled'
 
 export default component$(() => {
-  useStyles$(createStyle())
+  useStylesScoped$(createStyle())
   
   return (
     <div class="portfolio">
@@ -57,7 +57,6 @@ function createStyle() {
       display: flex;
       flex-direction: column;
       align-items: start;
-      text-align: start;
       padding: 2em 1.5em;
 
       & > h3, p {
@@ -88,6 +87,23 @@ function createStyle() {
       align-items: center;
       & > svg {
         margin-right: .1em;
+      }
+    }
+
+    .portfolio:nth-child(4), .portfolio:nth-child(5), .portfolio:nth-child(6) {
+      display: none;
+    }
+
+    @media (650px <= width < 1200px) {
+      .portfolio:nth-child(4) {
+        display: block;
+      }
+    }
+
+
+    @media (width >= 1200px) {
+      .portfolio:nth-child(4), .portfolio:nth-child(5), .portfolio:nth-child(6) {
+        display: block;
       }
     }
   `)
