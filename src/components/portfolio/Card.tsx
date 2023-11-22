@@ -6,7 +6,7 @@ export default component$(() => {
   
   return (
     <div class="portfolio">
-      <div class="portfolio__visual"><b class="price">S$49,000</b></div>
+      <div class="portfolio__visual"><b class="portfolio__price">S$49,000</b></div>
       <div class="portfolio_detail">
         <h3>513 The Calrose</h3>
         <p>513 Tio Chu Kang Road, Singapore 787066</p>
@@ -46,7 +46,7 @@ function createStyle() {
       background-color: grey;
     }
 
-    .price {
+    .portfolio__price {
       position: absolute;
       bottom: 1em;
       left: 2em;

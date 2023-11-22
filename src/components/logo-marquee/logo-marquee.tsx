@@ -29,7 +29,7 @@ function createStyle() {
     --logo-opacity: .5;
 
     display: flex;
-    margin-block: 100px;
+    padding-block: 100px;
     overflow: hidden;
   }
 

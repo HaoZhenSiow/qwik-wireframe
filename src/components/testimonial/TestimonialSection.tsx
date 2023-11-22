@@ -1,13 +1,13 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import { component$, useStyles$ } from '@builder.io/qwik'
 import styled from '~/lib/styled'
 import Testimonial from './Testimonial'
 // import Card from '../portfolio/Card'
 
 export default component$(() => {
-  useStylesScoped$(createStyle())
+  useStyles$(createStyle())
 
   return (
-    <div class="container testimonials">
+    <div class="container testimonials_section">
       <h2>Don't Take Our Word For It.<br/> Hear What Our Customers Say.</h2>
       <div class="testimonials__container">
         <Testimonial/>
@@ -24,7 +24,7 @@ export default component$(() => {
 
 function createStyle() {
   return styled(`
-    .testimonials {
+    .testimonials_section {
       padding-block: 100px;
       text-align: center;
     }
@@ -34,7 +34,7 @@ function createStyle() {
       grid-gap: 1.5em;
     }
 
-    .view-testimonials__cta {
+    .testimonials__cta {
       font-weight: bold;
       font-size: 1em;
       padding: 1em 2em;
@@ -43,12 +43,26 @@ function createStyle() {
       margin-top: 2em;
     }
 
-    @media (900px <= width < 1200px) {
+    .testimonial_card:nth-child(4),
+    .testimonial_card:nth-child(5),
+    .testimonial_card:nth-child(6) {
+      display: none;
+    }
+
+    @media (650px <= width < 1200px) {
       .testimonials__container { grid-template-columns: repeat(2, 1fr); }
+      .testimonial_card:nth-child(4), {
+        display: block;
+      }
     }
 
     @media (width >= 1200px) {
       .testimonials__container { grid-template-columns: repeat(3, 1fr); }
+      .testimonial_card:nth-child(4),
+      .testimonial_card:nth-child(5),
+      .testimonial_card:nth-child(6) {
+        display: block;
+      }
     }
   `)
 }

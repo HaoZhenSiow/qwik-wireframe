@@ -1,7 +1,5 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { component$, } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import styled from '~/lib/styled'
-import fluid from '~/lib/fluid'
 
 import Navbar1 from '~/components/nav/navbar1'
 import HeroSection from '~/components/hero-section/double-img-marquee'
@@ -13,8 +11,6 @@ import TestimonialSection from '~/components/testimonial/TestimonialSection'
 import FAQ from '~/components/faq/FAQ'
 
 export default component$(() => {
-  useStyles$(createStyle())
-
   return (
     <>
       <Navbar1/>
@@ -40,25 +36,4 @@ export const head: DocumentHead = {
       content: "Qwik site description",
     },
   ],
-}
-
-function createStyle() {
-  return styled(`
-    h2 {
-      font-size: ${fluid(26, 44, 320, 1440)};
-      margin-top: 1.5em;
-      margin-bottom: 2em;
-    }
-
-    footer {
-      height: 800px;
-      width: 100%;
-    }
-
-    @media (1000px <= width) {
-      h2 {
-        margin-top: 0;
-      }
-    }
-  `)
 }

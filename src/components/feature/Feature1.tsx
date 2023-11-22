@@ -24,12 +24,13 @@ function createStyle() {
       padding-block: 100px;
       display: flex;
       flex-direction: column-reverse;
-      // text-align: center;
       align-items: center;
     }
 
     h2 {
+      margin-top: 1.5em;
       margin-bottom: 1em;
+      text-align: center;
     }
 
     p {
@@ -45,8 +46,10 @@ function createStyle() {
       align-self: center;
     }
 
-    @media (700px <= width) {
-      br { display: none; }
+    @media (width > 1200px) {
+      h2 {
+        text-align: left;
+      }
     }
 
 
@@ -60,6 +63,10 @@ function createStyle() {
 
       P {
         margin-right: 3em;
+      }
+
+      .visual {
+        width: 60%;
       }
     }
   `

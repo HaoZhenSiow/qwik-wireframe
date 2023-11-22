@@ -89,7 +89,7 @@ const Marquee = component$(({ reverse }: {
 function createStyle() {
   return styled(`
     header {
-      --title-fs: ${fluid(28, 48, 320, 1440)};
+      --title-fs: ${fluid(30, 52, 320, 1440)};
       --cta-fs: 1em;
       --cta-color: white;
       --cta-bg: black;

@@ -47,12 +47,6 @@ function createStyle() {
       display: none;
     }
 
-    @media (768px <= width) {
-      br {
-        display: none;
-      }
-    }
-
     @media (650px <= width < 1200px) {
       .portfolio__container { grid-template-columns: repeat(2, 1fr); }
       .portfolio:nth-child(4) {
