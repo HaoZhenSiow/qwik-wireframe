@@ -5,15 +5,15 @@ export default component$(() => {
 
   const logos = ['elitEnterprice', 'prestige100', 'sme', 'top', 'top2023', 'topService', 'bizsafe']
   return (
-    <div class="logo__marquee">
-      <div class="logoList">
+    <div class="logo-marquee section">
+      <div class="logo-marquee__list">
         {logos.map(logo => (
-          <div key={`${logo}-1`} class="logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}}></div>
+          <div key={`${logo}-1`} class="logo-marquee__logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}} />
         ))}
       </div>
-      <div class="logoList">
+      <div class="logo-marquee__list">
         {logos.map(logo => (
-          <div key={`${logo}-2`} class="logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}}></div>
+          <div key={`${logo}-2`} class="logo-marquee__logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}} />
         ))}
       </div>
     </div>
@@ -22,25 +22,27 @@ export default component$(() => {
 
 function createStyle() {
   return `
-  .logo__marquee {
+  .logo-marquee {
     --ani-duration: 20s;
     --logo-width: 150px;
     --logo-color: black;
     --logo-opacity: .5;
 
     display: flex;
-    padding-block: 100px;
     overflow: hidden;
   }
 
-  .logoList {
+  .logo-marquee__list {
     display: flex;
     animation: marquee-move-left var(--ani-duration) linear infinite;
   }
 
-  .logo {
+  .logo-marquee__logo {
     width: var(--logo-width);
     aspect-ratio: 3 / 2;
+    flex-shrink: 0;
+    margin-inline: calc(var(--logo-width) * .2);
+    line-height: 0;
     background-image: var(--logo-url);
     background-size: contain;
     background-repeat: no-repeat;
@@ -54,9 +56,11 @@ function createStyle() {
     // mask-size: contain;
     // mask-repeat: no-repeat;
     // mask-position: center;
-    flex-shrink: 0;
-    margin-inline: calc(var(--logo-width) * .2);
     // opacity: var(--logo-opacity);
+  }
+
+  .logo-marquee__logo img {
+    object-fit: contain;
   }
 
   @keyframes marquee-move-left {

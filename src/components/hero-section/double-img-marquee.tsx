@@ -1,10 +1,10 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
 import styled from '~/lib/styled'
 import fluid from '~/lib/fluid'
 import useViewportSize from '~/hooks/useViewportSize'
 
 export default component$(() => {
-  useStyles$(createStyle())
+  useStylesScoped$(createStyle())
 
   const viewport = useViewportSize(),
         isMidScreen = viewport.width >= 650
@@ -33,7 +33,7 @@ const Marquee = component$(({ reverse }: {
   const heroImages = ['1', '2', '3', '4', '5']
   const repeat = 2
 
-  useStyles$(styled(`
+  useStylesScoped$(styled(`
     .marquee {
       --img-width: ${fluid(250, 300, 320, 1440)};
       --ani-duration: 20s;

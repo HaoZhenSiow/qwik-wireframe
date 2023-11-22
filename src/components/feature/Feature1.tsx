@@ -1,12 +1,15 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import styled from '~/lib/styled'
 // import fluid from '~/lib/fluid'
 
 export default component$(() => {
   useStylesScoped$(createStyle())
 
+  const isLeft = false
+
   return (
-    <div class="container">
-      <div class="copy">
+    <div class={['container', 'section', 'feature', isLeft ? 'feature--left' : '']}>
+      <div class="feature__copy">
         <h2>2-Month Handover<br/> or 50% Refund</h2>
         <p>Getting our dream home is a milestone for every Singaporean, and for most of us, it’s a once-in-a-lifetime experience.</p>
         <p>We understand your excitement about moving into your dream house, and we promise it will be a swift and stress-free process.</p>
@@ -19,15 +22,14 @@ export default component$(() => {
 })
 
 function createStyle() {
-  return `
-    .container {
-      padding-block: 100px;
+  return styled(`
+    .feature {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
     }
 
-    h2 {
+    .feature__copy h2 {
       margin-top: 1.5em;
       margin-bottom: 1em;
       text-align: center;
@@ -46,28 +48,39 @@ function createStyle() {
       align-self: center;
     }
 
-    @media (width > 1200px) {
-      h2 {
-        text-align: left;
-      }
-    }
-
-
     @media (1000px <= width) {
-      .container {
+      .feature {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         text-align: start;
       }
 
-      P {
-        margin-right: 3em;
+      .feature__copy h2 {
+        margin-top: 0;
+        text-align: left;
       }
 
       .visual {
-        width: 60%;
+        width: 100%;
+      }
+
+      .feature__copy {
+        margin-right: 3em;
+      }
+
+      .feature--left {
+        flex-direction: row-reverse;
+
+        & .feature__copy {
+          margin-right: 0;
+          margin-left: 3em;
+        }
+
+        & .visual {
+          width: 60%;
+        }
       }
     }
-  `
+  `)
 }
