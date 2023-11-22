@@ -9,7 +9,7 @@ import Feature2 from '~/components/feature/Feature2'
 import Portfolio from '~/components/portfolio/Portfolio'
 import TestimonialSection from '~/components/testimonial/TestimonialSection'
 import FAQ from '~/components/faq/FAQ'
-import Cta1 from '~/components/cta/cta1'
+import Cta1 from '~/components/cta/Cta1'
 
 export default component$(() => {
   return (
