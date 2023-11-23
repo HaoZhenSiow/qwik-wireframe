@@ -1,6 +1,7 @@
 import { component$, } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 
+import Navbar1 from '~/components/navbar/Navbar1'
 import HeroSection from '~/components/hero-section/double-img-marquee'
 import LogoMarquee from '~/components/logo-marquee/logo-marquee'
 import Feature1 from '~/components/feature/Feature1'
@@ -13,7 +14,7 @@ import Cta1 from '~/components/cta/Cta1'
 export default component$(() => {
   return (
     <>
-      {/* <Navbar1/> */}
+      <Navbar1/>
       <HeroSection/>
       <main>
         <LogoMarquee />
