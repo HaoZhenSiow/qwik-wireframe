@@ -1,25 +1,35 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik'
 import styled from '~/lib/styled'
-import useViewportSize from '~/hooks/useViewportSize'
 import useWindowScroll from '~/hooks/useWindowScroll'
 
-const navitems = ['About', 'Services', 'Portfolio', 'Testimonials', 'Contact']
+import Nav1 from './nav/Nav1'
+import Hamburger1 from './hamburger/Hamburger1'
 
 export default component$(() => {
   useStylesScoped$(createStyle())
   
   const scroll = useWindowScroll()
-  const viewport = useViewportSize(),
-        isSmallScreen = viewport.width <= 950
+
+  const navbar = [
+    'br-[var(--navbar-bg)]',
+    'py-[1.5em]',
+    'fixed',
+    'top-0',
+    'left-0',
+    'w-full',
+    'transition-py',
+    'duration-500',
+    'ease-in-out',
+    'z-50',
+    scroll.value > 0 && 'scrolled',
+  ]
 
   return (
-    <div class={[
-      'navbar',
-      scroll.value > 0 && 'navbar--scrolled',
-    ]}>
-      <div class="container navbar__container">
-        <p class="navbar__logo">LOGO</p>
-        {isSmallScreen ? <Hamburger /> : <NavButtons />}
+    <div class={navbar}>
+      <div class="flui-container fluid-container flex justify-between items-center">
+        <p class="navbar__logo scroll-text-[2.5em] font-bold leading-none transition-fs duration-500 ease-in-out">LOGO</p>
+        <Nav1 />
+        <Hamburger1 />
       </div>
     </div>
   )
@@ -27,35 +37,19 @@ export default component$(() => {
 
 function createStyle() {
   return styled(`
-    .navbar {
+    div:not(:empty) {
       --navbar-bg: transparent;
       --logo-fs: 3em;
       --navbar-bg-scrolled: white;
       --logo-fs-scrolled: 2.5em;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: var(--navbar-bg);
-      padding-block: 1.5em;
-      transition: padding-block .5s ease-in-out;
-      z-index: 100;
-    }
-
-    .navbar__container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      
     }
 
     .navbar__logo {
       font-size: var(--logo-fs);
-      font-weight: bold;
-      line-height: 1;
-      transition: font-size .5s ease-in-out;
     }
 
-    .navbar.navbar--scrolled {
+    .scrolled {
       background-color: var(--navbar-bg-scrolled);
       padding-block: .4em;
 
@@ -65,81 +59,3 @@ function createStyle() {
     }
   `)
 }
-
-const NavButtons = component$(() => {
-  useStylesScoped$(styled(`
-    .nav__links--container {
-      --btn-bg: black;
-      --btn-color: white;
-      display: flex;
-      align-items: center;
-    }
-
-    .nav__links--list {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-    }
-
-    .nav__links--link {
-      margin-left: 1em;
-      letter-spacing: 1px;
-    }
-
-    .nav__links--button {
-      font-size: 1em;
-      padding: .5em 1em;
-      color: var(--btn-color);
-      background-color: var(--btn-bg);
-      border-radius: 5px;
-      margin-left: 1em;
-    }
-  `))
-  return (
-    <div class="nav__links--container">
-      <ul class="nav__links--list">
-        {navitems.map((item) => (
-          <li key={item}>
-            <a href={`/${item}`} class="nav__links--link">{item}</a>
-          </li>
-        ))}
-      </ul>
-      <button type='button' class="nav__links--button">Free Quotation</button>
-    </div>
-  )
-})
-
-const Hamburger = component$(() => {
-  useStylesScoped$(styled(`
-    .hamburger {
-      --width: 3em;
-      --color: gray;
-      content: '';
-      width: var(--width);
-      height: calc(var(--width)/3*2);
-      position: relative;
-      cursor: pointer;
-    }
-
-    .hamburger__bar {
-      width: 100%;
-      height: .3em;
-      border-radius: 5px;
-      background-color: var(--color);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .hamburger__bar--first { top: 10%; }
-    .hamburger__bar--last { top: 90%; }
-  `))
-  return (
-    <div class="hamburger">
-      <div class="hamburger__bar hamburger__bar--first"/>
-      <div class="hamburger__bar"/>
-      <div class="hamburger__bar hamburger__bar--last"/>
-    </div>
-  )
-})

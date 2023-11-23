@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        py: 'padding-block',
+        fs: 'font-size'
+      },
+    },
   },
   plugins: [],
 };
