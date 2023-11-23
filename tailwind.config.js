@@ -6,7 +6,7 @@ module.exports = {
       transitionProperty: {
         py: 'padding-block',
         fs: 'font-size'
-      },
+      }
     },
   },
   plugins: [],
