@@ -11,7 +11,7 @@ export default component$(() => {
 
   return (
     <header>
-      <div class="hero__visual container">
+      <div class="hero__visual">
         <Marquee />
         <Marquee reverse />
       </div>

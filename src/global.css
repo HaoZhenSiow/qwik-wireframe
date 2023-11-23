@@ -1,18 +1,4 @@
 :root {
   --heading-font: 'Ubuntu', sans-serif;
   --body-font: 'Open Sans', sans-serif;
-  --section-spacing: clamp(6.25rem, 5.8036rem + 2.2321vw, 7.8125rem);
-}
-
-header { padding-bottom: var(--section-spacing); }
-section { padding-block: var(--section-spacing); }
-footer { padding-top: var(--section-spacing); }
-
-h2 {
-  margin-bottom: 3.5em;
-}
-
-footer {
-  height: 800px;
-  width: 100%;
 }
