@@ -6,6 +6,12 @@ module.exports = {
       transitionProperty: {
         py: 'padding-block',
         fs: 'font-size'
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
       }
     },
   },

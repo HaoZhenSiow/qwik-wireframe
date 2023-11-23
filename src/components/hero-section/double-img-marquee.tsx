@@ -38,9 +38,6 @@ const Marquee = component$(({ heroImages, reverse }: {
   heroImages: string[],
   reverse?: boolean
 }) => {
-  const repeat = 2
-  const animationDuration = '20s'
-
   useStylesScoped$(styled(`
     .marquee {
       --img-width: ${fluid(250, 300, 320, 1440)};
@@ -48,21 +45,12 @@ const Marquee = component$(({ heroImages, reverse }: {
       -webkit-mask-image: var(--mask-gradient);
       mask-image: var(--mask-gradient);
     }
-
-    @keyframes marquee-move {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-    }
   `))
   
   return (
     <div class={`marquee relative flex overflow-hidden`}>
-      {Array(repeat).fill('x').map((x, idx) => (
-        <div key={idx} class={`flex animate-[marquee-move_${animationDuration}_linear_infinite${reverse ? '_reverse' : ''}]`}>
+      {Array(2).fill('x').map((x, idx) => (
+        <div key={idx} class={`flex animate-[marquee_20s_linear_infinite${reverse ? '_reverse' : ''}]`}>
           {heroImages.map((img, idx) => (
             <div key={idx} class={`aspect-video w-[--img-width] bg-gray-400 mx-2.5 rounded-xl`}></div>
           ))}

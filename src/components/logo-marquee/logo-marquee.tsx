@@ -1,75 +1,41 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import styled from '~/lib/styled'
 
 export default component$(() => {
   useStylesScoped$(createStyle())
 
   const logos = ['elitEnterprice', 'prestige100', 'sme', 'top', 'top2023', 'topService', 'bizsafe']
+
   return (
-    <section class="logo-marquee" aria-label="awards and accreditations marquee">
-      <div class="logo-marquee__list">
-        {logos.map(logo => (
-          <div key={`${logo}-1`} class="logo-marquee__logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}} />
-        ))}
-      </div>
-      <div class="logo-marquee__list">
-        {logos.map(logo => (
-          <div key={`${logo}-2`} class="logo-marquee__logo" style={{ "--logo-url": `url('/ID/${logo}.webp')`}} />
-        ))}
-      </div>
+    <section class="fluid-section flex overflow-hidden" aria-label="awards and accreditations marquee">
+      {Array(2).fill('x').map((x, idx) => (
+        <div key={idx} class="flex animate-[marquee_20s_linear_infinite]">
+          {logos.map(logo => (
+            <div key={`${logo}-1`} class="logo-list w-36 aspect-[3/2] leading-none mx-7" style={{ "--logo-url": `url('/ID/${logo}.webp')`}} />
+          ))}
+        </div>
+      ))}
     </section>
   )
 })
 
 function createStyle() {
-  return `
-  .logo-marquee {
-    --ani-duration: 20s;
-    --logo-width: 150px;
-    --logo-color: black;
-    --logo-opacity: .5;
-
-    display: flex;
-    overflow: hidden;
-  }
-
-  .logo-marquee__list {
-    display: flex;
-    animation: marquee-move-left var(--ani-duration) linear infinite;
-  }
-
-  .logo-marquee__logo {
-    width: var(--logo-width);
-    aspect-ratio: 3 / 2;
-    flex-shrink: 0;
-    margin-inline: calc(var(--logo-width) * .2);
-    line-height: 0;
-    background-image: var(--logo-url);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    // background-color: var(--logo-color);
-    // -webkit-mask-image: var(--logo-url);
-    // -webkit-mask-size: contain;
-    // -webkit-mask-repeat: no-repeat;
-    // -webkit-mask-position: center;
-    // mask-image: var(--logo-url);
-    // mask-size: contain;
-    // mask-repeat: no-repeat;
-    // mask-position: center;
-    // opacity: var(--logo-opacity);
-  }
-
-  .logo-marquee__logo img {
-    object-fit: contain;
-  }
-
-  @keyframes marquee-move-left {
-    from {
-      transform: translateX(0);
+  return styled(`
+    .logo-list {
+      background-image: var(--logo-url);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  `
+  `)
+  // --logo-color: black;
+  // background-color: var(--logo-color);
+  // -webkit-mask-image: var(--logo-url);
+  // -webkit-mask-size: contain;
+  // -webkit-mask-repeat: no-repeat;
+  // -webkit-mask-position: center;
+  // mask-image: var(--logo-url);
+  // mask-size: contain;
+  // mask-repeat: no-repeat;
+  // mask-position: center;
 }
