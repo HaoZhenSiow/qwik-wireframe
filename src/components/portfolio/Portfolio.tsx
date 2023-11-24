@@ -5,7 +5,7 @@ export default component$(() => {
   // useStylesScoped$(createStyle())
 
   return (
-    <section class="fluid-section flex flex-col items-center" aria-labelled="portfolio">
+    <section class="fluid-section flex flex-col items-center" aria-label="portfolio">
       <h2 class="self-start">Outstanding Work and Nothing Less</h2>
       {/* <h2 class="text-center">Outstanding Work<br class="gte650:hidden" /> and Nothing Less</h2> */}
       {/* <h2>Find Out What <br/>We Do Best</h2> */}
