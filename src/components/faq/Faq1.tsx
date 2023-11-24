@@ -1,14 +1,13 @@
-import { component$, useSignal, useStylesScoped$ } from '@builder.io/qwik'
-import styled from '~/lib/styled'
+import { component$, useSignal } from '@builder.io/qwik'
 
 import Accordion from './Accordion'
 import Qna from './Qna'
 
 export default component$(() => {
-  useStylesScoped$(createStyle())
+  // useStylesScoped$(createStyle())
   const expansionSig = useSignal(Array(Qna.length).fill(false))
   return (
-    <section class="container">
+    <section class="fluid-section flex flex-col">
       <h2>Frequently Asked Questions</h2>
       <div>
         {Qna.map((item, idx) => (
@@ -21,11 +20,8 @@ export default component$(() => {
 
 // https://codepen.io/kathykato/details/MoZJom
 
-function createStyle() {
-  return styled(`
-    section {
-      display: flex;
-      flex-direction: column;
-    }
-  `)
-}
+// function createStyle() {
+//   return styled(`
+
+//   `)
+// }

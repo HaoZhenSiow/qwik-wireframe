@@ -8,7 +8,7 @@ import Feature1 from '~/components/feature/Feature1'
 import Feature2 from '~/components/feature/Feature2'
 import Portfolio from '~/components/portfolio/Portfolio'
 import TestimonialSection from '~/components/testimonial/TestimonialSection'
-import FAQ from '~/components/faq/FAQ'
+import FAQ from '~/components/faq/Faq1'
 import Cta1 from '~/components/cta/Cta1'
 
 export default component$(() => {
