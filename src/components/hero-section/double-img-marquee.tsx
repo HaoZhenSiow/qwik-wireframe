@@ -46,11 +46,13 @@ const Marquee = component$(({ heroImages, reverse }: {
       mask-image: var(--mask-gradient);
     }
   `))
+
+  const animate: string = reverse ? 'animate-[marquee_20s_linear_infinite]' : 'animate-[marquee_20s_linear_infinite_reverse]'
   
   return (
     <div class={`marquee relative flex overflow-hidden`}>
       {Array(2).fill('x').map((x, idx) => (
-        <div key={idx} class={`flex animate-[marquee_20s_linear_infinite${reverse ? '_reverse' : ''}]`}>
+        <div key={idx} class={`flex ${animate}`}>
           {heroImages.map((img, idx) => (
             <div key={idx} class={`aspect-video w-[--img-width] bg-gray-400 mx-2.5 rounded-xl`}></div>
           ))}
