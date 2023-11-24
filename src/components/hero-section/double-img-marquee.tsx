@@ -54,7 +54,7 @@ const Marquee = component$(({ heroImages, reverse }: {
       {Array(2).fill('x').map((x, idx) => (
         <div key={idx} class={`flex ${animate}`}>
           {heroImages.map((img, idx) => (
-            <div key={idx} class={`aspect-video w-[--img-width] bg-gray-400 mx-2.5 rounded-xl`}></div>
+            <div key={idx} class={`aspect-video w-[--img-width] bg-gray-500 mx-2.5 rounded-xl`}></div>
           ))}
         </div>
       ))}

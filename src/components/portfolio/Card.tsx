@@ -4,7 +4,7 @@ export default component$(({ classes }: { classes?: string }) => {
   // useStylesScoped$(createStyle())
   return (
     <div class={`overflow-hidden rounded-xl shadow-[3px_13px_21px_-3px_rgba(161,161,161,0.4)] ${classes}`}>
-      <div class="relative w-full aspect-[3/2] bg-gray-400">
+      <div class="relative w-full aspect-[3/2] bg-gray-500">
         <b class="absolute bottom-[1em] left-[2em] text-white">CONDO</b>
         <b class="absolute bottom-[1em] right-[2em] text-white">S$49,000</b>
       </div>

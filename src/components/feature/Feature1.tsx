@@ -12,7 +12,7 @@ export default component$(() => {
         <p class="max-w-[38.125em] my-[1.5em]">We've partnered up with trusted and experienced vendors and contractors, and we're so confident that we'll complete the project in just 2 months.</p>
         <p class="max-w-[38.125em] my-[1.5em]">If you&apos;re not move in after 2 months, 50% of all the fees is on us!</p>
       </div>
-      <div class="w-full gte1000:w-3/5 max-w-[500px] aspect-[3/2] bg-gray-400 self-center gte1000:mr-[3em]"></div>
+      <div class="w-full gte1000:w-3/5 max-w-[500px] aspect-[3/2] bg-gray-500 self-center gte1000:mr-[3em]"></div>
     </section>
   )
 })

@@ -17,7 +17,7 @@ export default component$(() => {
           <li class="my-[.5em]">Comprehensive Insight into Your Home Transformation Process</li>
         </ul>
       </div>
-      <div class="w-full gte1000:w-3/5 max-w-[500px] aspect-[3/2] bg-gray-400 self-center gte1000:ml-[3em]"></div>
+      <div class="w-full gte1000:w-3/5 max-w-[500px] aspect-[3/2] bg-gray-500 self-center gte1000:ml-[3em]"></div>
     </section>
   )
 })
