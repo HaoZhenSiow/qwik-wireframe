@@ -1,20 +1,38 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styled from "~/lib/styled";
 
+const labelClasses = [
+  "flex",
+  "flex-wrap",
+  "items-center",
+  "gap-[.3em]",
+  "font-normal",
+  "mb-[.3em]",
+  "leading-none"
+]
+
+const inputClasses = [
+  "w-[2em]",
+  "grow-[1]",
+  "border-b-[.07em]",
+  "border-current",
+  "outline-none"
+]
+
 export default component$(() => {
   useStylesScoped$(writeStyle())
   return (
-    <section class="container" aria-label="contact form">
-      <h2>Tell Us Your Story</h2>
-      <p>Design is about life and the way you experience them.</p>
+    <section class="fluid-section" aria-label="contact form">
+      <h2 class="mb-[.2em]">Tell Us Your Story</h2>
+      <p class="leading-none">Design is about life and the way you experience them.</p>
       <form action="">
         <fieldset>
-          <label for="name">
+          <label for="name" class={labelClasses}>
             <span>Hi,</span>
             <span>I'm</span>
-            <input type="text" name="name" placeholder="Name*" required />
+            <input type="text" name="name" class={inputClasses} placeholder="Name*" required />
           </label>
-          <label for="house-type">
+          <label for="house-type" class={labelClasses}>
             <span>and</span>
             <span>I'm</span>
             <span>looking</span>
@@ -26,7 +44,7 @@ export default component$(() => {
             <span>possibly</span>
             <span>renovate</span>
             <span>my</span>
-            <input type="text" name="house-type" placeholder="house type*" list="house-type" required />
+            <input type="text" name="house-type" class={inputClasses} placeholder="house type*" list="house-type" required />
           </label>
           <datalist id="house-type">
             <option value="2-room resale">2-room resale</option>
@@ -43,15 +61,15 @@ export default component$(() => {
             <option value="5-room condo">5-room condo</option>
             <option value="landed">landed</option>
           </datalist>
-          <label for="phone">
+          <label for="phone" class={labelClasses}>
             <span>You</span>
             <span>can</span>
             <span>reach</span>
             <span>me</span>
             <span>at</span>
-            <input type="number" name="phone" placeholder="Phone*" required />
+            <input type="number" name="phone" class={inputClasses} placeholder="Phone*" required />
           </label>
-          <button type="submit">
+          <button type="submit" class="bg-none border-none outline-none flex items-center gap-[.2em] mt-[1em]">
             Get my Quote
             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg> 
           </button>
@@ -63,58 +81,18 @@ export default component$(() => {
 
 function writeStyle() {
   return styled(`
-    h2 {
-      margin-bottom: .2em;
-    }
-
-    p {
-      line-height: 1
-    }
-
     form {
       margin-top: calc(var(--fluid-h2) * 3.5);
+      font-family: var(--heading-font);
     }
 
     label, input {
       font-size: calc(var(--fluid-lg) * 1.5);
-      font-family: var(--heading-font);
-      line-height: 1;
-    }
-
-    label {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: .3em;
-      font-weight: 400;
-      margin-bottom: .3em;
-    }
-
-    input {
-      width: 2em;
-      flex-grow: 1;
-      border: none;
-      outline: none;
-      border-bottom: .07em solid currentColor;
-    }
-
-    span {
-    }
-
-    datalist option {
-      font-size: 3em;
     }
 
     button {
       font-family: var(--heading-font);
-      background-color: transparent;
-      border: none;
-      outline: none;
       font-size: calc(var(--fluid-lg) * 2.5);
-      display: flex;
-      align-items: center;
-      gap: .2em;
-      margin-top: 1em;
     }
   `)
 }
