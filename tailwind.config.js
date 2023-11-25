@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       screens: {
         gte650: '650px',
+        gte700: '700px',
         gte1000: '1000px',
         gte1200: '1200px',
       },
