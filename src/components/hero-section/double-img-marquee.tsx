@@ -3,16 +3,16 @@ import styled from '~/lib/styled'
 import fluid from '~/lib/fluid'
 
 export default component$(() => {
-  useStylesScoped$(styled(`
-    header {
-      --title-fs: ${fluid(30, 52, 320, 1440)};
-      padding-top: ${fluid(100, 140, 320, 1440)};
-    }
+  // useStylesScoped$(styled(`
+  //   header {
+  //     --title-fs: ${fluid(30, 52, 320, 1440)};
+  //     padding-top: ${fluid(100, 140, 320, 1440)};
+  //   }
 
-    h1 {
-      font-size: var(--title-fs);
-    }
-  `))
+  //   h1 {
+  //     font-size: var(--title-fs);
+  //   }
+  // `))
 
   const heroImages = ['1', '2', '3', '4', '5']
 
