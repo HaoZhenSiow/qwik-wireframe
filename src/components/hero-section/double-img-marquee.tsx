@@ -3,21 +3,25 @@ import styled from '~/lib/styled'
 import fluid from '~/lib/fluid'
 
 export default component$(() => {
-  // useStylesScoped$(styled(`
-  //   header {
-  //     --title-fs: ${fluid(30, 52, 320, 1440)};
-  //     padding-top: ${fluid(100, 140, 320, 1440)};
-  //   }
+  useStylesScoped$(styled(`
+    header {
+      --title-fs: ${fluid(30, 52, 320, 1440)};
+      padding-top: ${fluid(100, 140, 320, 1440)};
+    }
 
-  //   h1 {
-  //     font-size: var(--title-fs);
-  //   }
-  // `))
+    h1 {
+      font-size: var(--title-fs);
+    }
+  `))
 
   const heroImages = ['1', '2', '3', '4', '5']
 
   return (
     <header class="fluid-header">
+      <div class="flex flex-col gap-5">
+        <Marquee heroImages={heroImages} />
+        <Marquee heroImages={heroImages} reverse />
+      </div>
       <div class="flex flex-col items-center text-center">
         <h1 class="mt-[1em]">Redefining Renovation Experience <br class="hidden md:inline" />Where<br class="sm:hidden" /> Trust Comes First</h1>
         <p class="max-w-[38.125em] py-[2em]">
@@ -25,10 +29,6 @@ export default component$(() => {
         </p>
         <button type="button" class="font-bold py-[1em] px-[2em] bg-black text-white">Get my Quote Now</button>
         <small>It's free, no consultation fee</small>
-      </div>
-      <div class="flex flex-col gap-5">
-        <Marquee heroImages={heroImages} />
-        <Marquee heroImages={heroImages} reverse />
       </div>
     </header>
   )

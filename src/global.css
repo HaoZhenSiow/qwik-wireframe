@@ -2,13 +2,3 @@
   --heading-font: 'Ubuntu', sans-serif;
   --body-font: 'Open Sans', sans-serif;
 }
-
-header {
-  /* --title-fs: ${fluid(30, 52, 320, 1440)};
-  padding-top: ${fluid(100, 140, 320, 1440)}; */
-  padding-top: clamp(6.25rem, calc(5.54rem + 3.57vw), 8.75rem);
-}
-
-h1 {
-  font-size: clamp(1.875rem, calc(1.48rem + 1.96vw), 3.25rem);
-}
