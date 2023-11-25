@@ -3,7 +3,7 @@ import styled from '~/lib/styled'
 import fluid from '~/lib/fluid'
 
 export default component$(() => {
-  useStylesScoped$(styled(`
+  useStylesScoped$(`
     header {
       --title-fs: ${fluid(30, 52, 320, 1440)};
       padding-top: ${fluid(100, 140, 320, 1440)};
@@ -12,7 +12,7 @@ export default component$(() => {
     h1 {
       font-size: var(--title-fs);
     }
-  `))
+  `)
 
   const heroImages = ['1', '2', '3', '4', '5']
 
@@ -38,14 +38,14 @@ const Marquee = component$(({ heroImages, reverse }: {
   heroImages: string[],
   reverse?: boolean
 }) => {
-  useStylesScoped$(styled(`
+  useStylesScoped$(`
     .marquee {
       --img-width: ${fluid(250, 300, 320, 1440)};
       --mask-gradient: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 52%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%);
       -webkit-mask-image: var(--mask-gradient);
       mask-image: var(--mask-gradient);
     }
-  `))
+  `)
 
   const animate: string = reverse ? 'animate-[marquee_20s_linear_infinite]' : 'animate-[marquee_20s_linear_infinite_reverse]'
   
