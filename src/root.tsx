@@ -28,6 +28,7 @@ export default component$(() => {
         <link rel="preload" href="/fonts/open-sans-v36-latin/open-sans-v36-latin-regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/ubuntu-v20-latin/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/comforter-v7-latin/comforter-v7-latin-regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/build/q-e1488406.js" crossOrigin="anonymous" />
         <RouterHead />
       </head>
       <body lang="en">
