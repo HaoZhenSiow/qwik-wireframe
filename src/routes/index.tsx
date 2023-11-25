@@ -10,6 +10,7 @@ import Portfolio from '~/components/portfolio/Portfolio'
 import TestimonialSection from '~/components/testimonial/TestimonialSection'
 import FAQ from '~/components/faq/Faq1'
 import Cta1 from '~/components/cta/Cta1'
+import FounderNote from '~/components/feature/FounderNote'
 
 export default component$(() => {
   return (
@@ -24,6 +25,7 @@ export default component$(() => {
         <TestimonialSection />
         <FAQ />
         <Cta1 />
+        <FounderNote />
       </main>
       {/* <footer></footer> */}
     </>

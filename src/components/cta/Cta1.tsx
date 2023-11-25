@@ -92,7 +92,8 @@ function writeStyle() {
 
     button {
       font-family: var(--heading-font);
-      font-size: calc(var(--fluid-lg) * 2.5);
+      font-size: clamp(2.5rem, 1.1622rem + 6.4865vw, 7rem);
+      /* https://utopia.fyi/clamp/calculator?a=330,1440,40%E2%80%94112 */
     }
   `)
 }

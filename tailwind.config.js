@@ -17,6 +17,11 @@ module.exports = {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
         }
+      },
+      fontFamily: {
+        comforter: [
+          '"Comforter", cursive'
+        ]
       }
     },
   },

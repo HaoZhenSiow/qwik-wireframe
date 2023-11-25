@@ -12,7 +12,8 @@
      --container-width: clamp(19.69rem, calc(3.24rem + 79.73vw), 75.00rem);
      --container-padding: calc(100vw - var(--container-width)) / 2;
      --container-padding-inline: clamp(5px, var(--container-padding), var(--container-padding));
-     --section-vertical-spacing: clamp(6.25rem, 5.8036rem + 2.2321vw, 7.8125rem);
+     /* https://utopia.fyi/clamp/calculator?a=330,1440,75%E2%80%94125 */
+     --section-vertical-spacing: clamp(4.6875rem, 3.7584rem + 4.5045vw, 7.8125rem);
    }
    .fluid-container {
      padding-inline: var(--container-padding-inline);
