@@ -6,7 +6,8 @@ export default component$(() => {
   useStylesScoped$(styled(`
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      display: block;
       margin-top: 100px;
     }
 
@@ -33,7 +34,7 @@ export default component$(() => {
   
   return (
     <header class="">
-      <Image alt="member of the team" />
+      <Image alt="member of the team" loading="eager"/>
       <div class="fluid-header">
         <h1>Visualize Your Dream Space:<br />We're Your Creative Team</h1>
         <p>At FT2, we're your dedicated partners in creating spaces that truly reflect your lifestyle and vision. Our award-winning interior designers are ready to bring your dream living space to life. With FT2, your living space isn't just transformed; it's designed to complement your life seamlessly. We're here to make your vision a reality, ensuring a hassle-free and enjoyable journey.</p>
