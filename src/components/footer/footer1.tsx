@@ -43,6 +43,10 @@ export default component$(() => {
       gap: 8px;
     }
 
+    .contact-info--trans svg {
+      transform: translateY(.5em);
+    }
+
     .contact-info--center {
       align-items: center;
     }
@@ -83,7 +87,7 @@ export default component$(() => {
       <div class="content">
         <address>
           <p class="logo">LOGO</p>
-          <p class="contact-info">{locationIcon} 10 Ubi Crescent #01-63A Lobby D<br />Ubi Techpark Singapore 408564</p>
+          <p class="contact-info contact-info--trans">{locationIcon} 10 Ubi Crescent #01-63A Lobby D<br />Ubi Techpark Singapore 408564</p>
           <p class="contact-info contact-info--center">{mailIcon} sales@ft2.com.sg</p>
           <p class="contact-info contact-info--center">{phoneIcon} +65 80449593</p>
           <b class="opening-hours">Opening hours</b>

@@ -1,4 +1,5 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import fluid from "~/lib/fluid";
 import styled from "~/lib/styled";
 
 export default component$(() => {
@@ -96,7 +97,7 @@ function writeStyle() {
 
     button {
       font-family: var(--heading-font);
-      font-size: clamp(2.5rem, 1.1622rem + 6.4865vw, 7rem);
+      font-size: ${fluid(40, 96, 330, 1440)};
       background-color: transparent;
       border: none;
       outline: none;
