@@ -2,11 +2,11 @@
  * Tailwind CSS imports
  * View the full documentation at https://tailwindcss.com
  */
- @tailwind base;
+ /* @tailwind base;
  @tailwind components;
  @tailwind utilities;
  
- @layer components {
+ @layer components { */
    /* @link https://utopia.fyi/type/calculator?c=330,315,1.067,1440,1200,1.2,5,2,1920&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
    :root {
      --container-width: clamp(19.69rem, calc(3.24rem + 79.73vw), 75.00rem);
@@ -30,9 +30,9 @@
      padding-inline: var(--container-padding-inline);
      margin-top: var(--section-vertical-spacing);
    }
- }
+ /* } */
 
-@layer base {
+/* @layer base { */
 /* https://utopia.fyi/type/calculator/?c=320,16,1.2,1440,18,1.333,5,2,1920&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 :root {
   /* --fluid-h1: clamp(2.0738rem, 1.6514rem + 2.1116vw, 3.5519rem);
@@ -167,9 +167,10 @@ label {
 
 button {
   font-family: var(--body-font);
+  font-size: 1em;
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     cursor: pointer;
 }
-}
+/* } */

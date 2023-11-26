@@ -24,15 +24,15 @@ export default component$(({ idx, expansionSig, item }: {
 
   return (
     <div class="accordion">
-      <button type="button" aria-expanded={expansionSig.value[idx]} class="accordion__button" onClick$={() => {
+      <button type="button" aria-expanded={expansionSig.value[idx]} onClick$={() => {
         const newBooleanArr = [...expansionSig.value].fill(false)
         newBooleanArr[idx] = !expansionSig.value[idx]
         expansionSig.value = newBooleanArr
       }}>
-        <span class="accordion__title">{item.question}</span>
-        <span aria-hidden={!expansionSig.value[idx]} class="accordion__toggle"/>
+        <span class="title">{item.question}</span>
+        <span aria-hidden={!expansionSig.value[idx]} class="toggle"/>
       </button>
-      <div id="some-content-1" class="accordion__content" ref={contentSig}>
+      <div id="some-content-1" class="content" ref={contentSig}>
         <div>
           {item.answer.map((ans, idx) => (
             <p key={idx}>{ans}</p>
@@ -49,7 +49,7 @@ function writeAccordionStyle() {
       border-bottom: 1px solid;
     }
 
-    .accordion__button {
+    button {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -64,7 +64,7 @@ function writeAccordionStyle() {
       text-align: left;
     }
 
-    .accordion__toggle {
+    .toggle {
       position: relative;
       display: inline-block;
       width: 22px;
@@ -94,32 +94,32 @@ function writeAccordionStyle() {
       
     }
 
-    .accordion__content {
+    .content {
       overflow: hidden;
       max-height: 0;
       transition: all 200ms linear;
     }
 
-    .accordion__content p:not(:last-child) {
+    .content p:not(:last-child) {
       margin-block-end: 1em;
     }
 
-    .accordion__content > div { 
+    .content > div { 
       padding-block: 1em;
       opacity: 0.8;
      }
 
-    .accordion__toggle[aria-hidden="false"] {
+    .toggle[aria-hidden="false"] {
       &::after {
         opacity: 0;
       }
     }
 
-    .accordion__button[aria-expanded="true"] {
+    button[aria-expanded="true"] {
       border-bottom: 1px solid;
     }
 
-    .accordion__button[aria-expanded="true"] + .accordion__content {
+    button[aria-expanded="true"] + .content {
       max-height: var(--content-height);
     }
   `)

@@ -29,7 +29,6 @@ export default component$(() => {
         <FounderNote />
       </main>
       <Footer1></Footer1>
-      {/* <footer></footer> */}
     </>
   );
 });

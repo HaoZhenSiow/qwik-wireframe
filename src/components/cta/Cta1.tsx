@@ -1,38 +1,20 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styled from "~/lib/styled";
 
-const labelClasses = [
-  "flex",
-  "flex-wrap",
-  "items-center",
-  "gap-[.3em]",
-  "font-normal",
-  "mb-[.3em]",
-  "leading-none"
-]
-
-const inputClasses = [
-  "w-[2em]",
-  "grow-[1]",
-  "border-b-[.07em]",
-  "border-current",
-  "outline-none"
-]
-
 export default component$(() => {
   useStylesScoped$(writeStyle())
   return (
     <section class="fluid-section" aria-label="contact form">
-      <h2 class="mb-[.2em]">Tell Us Your Story</h2>
-      <p class="leading-none">Design is about life and the way you experience them.</p>
+      <h2>Tell Us Your Story</h2>
+      <p>Design is about life and the way you experience them.</p>
       <form action="">
         <fieldset>
-          <label for="name" class={labelClasses}>
+          <label for="name">
             <span>Hi,</span>
             <span>I'm</span>
-            <input type="text" name="name" class={inputClasses} placeholder="Name*" required />
+            <input type="text" name="name" placeholder="Name*" required />
           </label>
-          <label for="house-type" class={labelClasses}>
+          <label for="house-type">
             <span>and</span>
             <span>I'm</span>
             <span>looking</span>
@@ -44,7 +26,7 @@ export default component$(() => {
             <span>possibly</span>
             <span>renovate</span>
             <span>my</span>
-            <input type="text" name="house-type" class={inputClasses} placeholder="house type*" list="house-type" required />
+            <input type="text" name="house-type" placeholder="house type*" list="house-type" required />
           </label>
           <datalist id="house-type">
             <option value="2-room resale">2-room resale</option>
@@ -61,17 +43,17 @@ export default component$(() => {
             <option value="5-room condo">5-room condo</option>
             <option value="landed">landed</option>
           </datalist>
-          <label for="phone" class={labelClasses}>
+          <label for="phone">
             <span>You</span>
             <span>can</span>
             <span>reach</span>
             <span>me</span>
             <span>at</span>
-            <input type="number" name="phone" class={inputClasses} placeholder="Phone*" required />
+            <input type="number" name="phone" placeholder="Phone*" required />
           </label>
-          <button type="submit" class="bg-none border-none outline-none flex items-center gap-[.2em] mt-[1em]">
+          <button type="submit">
             Get my Quote
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg> 
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg> 
           </button>
         </fieldset>
       </form>
@@ -86,14 +68,143 @@ function writeStyle() {
       font-family: var(--heading-font);
     }
 
+    h2 { margin-bottom: .2em; }
+
+    p { line-height: 1; }
+
     label, input {
       font-size: calc(var(--fluid-lg) * 1.5);
+    }
+
+    label {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .3em;
+      font-weight: 400;
+      margin-bottom: .3em;
+      line-height: 1;
+    }
+
+    input {
+      width: 2em;
+      flex-grow: 1;
+      border: none;
+      outline: none;
+      border-bottom: .07em solid currentColor;
     }
 
     button {
       font-family: var(--heading-font);
       font-size: clamp(2.5rem, 1.1622rem + 6.4865vw, 7rem);
+      background-color: transparent;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      gap: .2em;
+      margin-top: 1em;
       /* https://utopia.fyi/clamp/calculator?a=330,1440,40%E2%80%94112 */
     }
   `)
 }
+
+// import { component$, useStylesScoped$ } from "@builder.io/qwik";
+// import styled from "~/lib/styled";
+
+// const labelClasses = [
+//   "flex",
+//   "flex-wrap",
+//   "items-center",
+//   "gap-[.3em]",
+//   "font-normal",
+//   "mb-[.3em]",
+//   "leading-none"
+// ]
+
+// const inputClasses = [
+//   "w-[2em]",
+//   "grow-[1]",
+//   "border-b-[.07em]",
+//   "border-current",
+//   "outline-none"
+// ]
+
+// export default component$(() => {
+//   useStylesScoped$(writeStyle())
+//   return (
+//     <section class="fluid-section" aria-label="contact form">
+//       <h2 class="mb-[.2em]">Tell Us Your Story</h2>
+//       <p class="leading-none">Design is about life and the way you experience them.</p>
+//       <form action="">
+//         <fieldset>
+//           <label for="name" class={labelClasses}>
+//             <span>Hi,</span>
+//             <span>I'm</span>
+//             <input type="text" name="name" class={inputClasses} placeholder="Name*" required />
+//           </label>
+//           <label for="house-type" class={labelClasses}>
+//             <span>and</span>
+//             <span>I'm</span>
+//             <span>looking</span>
+//             <span>for</span>
+//             <span>an</span>
+//             <span>Interior</span>
+//             <span>Designer</span>
+//             <span>to</span>
+//             <span>possibly</span>
+//             <span>renovate</span>
+//             <span>my</span>
+//             <input type="text" name="house-type" class={inputClasses} placeholder="house type*" list="house-type" required />
+//           </label>
+//           <datalist id="house-type">
+//             <option value="2-room resale">2-room resale</option>
+//             <option value="3-room resale">3-room resale</option>
+//             <option value="4-room resale">4-room resale</option>
+//             <option value="5-room resale">5-room resale</option>
+//             <option value="2-room bto">2-room bto</option>
+//             <option value="3-room bto">3-room bto</option>
+//             <option value="4-room bto">4-room bto</option>
+//             <option value="5-room bto">5-room bto</option>
+//             <option value="2-room condo">2-room condo</option>
+//             <option value="3-room condo">3-room condo</option>
+//             <option value="4-room condo">4-room condo</option>
+//             <option value="5-room condo">5-room condo</option>
+//             <option value="landed">landed</option>
+//           </datalist>
+//           <label for="phone" class={labelClasses}>
+//             <span>You</span>
+//             <span>can</span>
+//             <span>reach</span>
+//             <span>me</span>
+//             <span>at</span>
+//             <input type="number" name="phone" class={inputClasses} placeholder="Phone*" required />
+//           </label>
+//           <button type="submit" class="bg-none border-none outline-none flex items-center gap-[.2em] mt-[1em]">
+//             Get my Quote
+//             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg> 
+//           </button>
+//         </fieldset>
+//       </form>
+//     </section>
+//   )
+// });
+
+// function writeStyle() {
+//   return styled(`
+//     form {
+//       margin-top: calc(var(--fluid-h2) * 3.5);
+//       font-family: var(--heading-font);
+//     }
+
+//     label, input {
+//       font-size: calc(var(--fluid-lg) * 1.5);
+//     }
+
+//     button {
+//       font-family: var(--heading-font);
+//       font-size: clamp(2.5rem, 1.1622rem + 6.4865vw, 7rem);
+//       /* https://utopia.fyi/clamp/calculator?a=330,1440,40%E2%80%94112 */
+//     }
+//   `)
+// }
